@@ -25,6 +25,8 @@ import { from } from 'rxjs';
 import { HomeComponent } from './components/home/home.component';
 import { ImageFormComponent } from './components/image-form/image-form.component';
 import { SocialFormComponent } from './components/social-form/social-form.component';
+import { AddonFormComponent } from './components/addon-form/addon-form.component';
+import { DesignFormComponent } from './components/design-form/design-form.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { SocialFormComponent } from './components/social-form/social-form.compon
     GeneralFormComponent,
     HomeComponent,
     ImageFormComponent,
-    SocialFormComponent
+    SocialFormComponent,
+    AddonFormComponent,
+    DesignFormComponent
   ],
   imports: [
     BrowserModule,

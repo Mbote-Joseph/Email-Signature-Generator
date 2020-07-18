@@ -1,20 +1,64 @@
-<div style="margin: 10%; align-content: center; border: 1px solid grey; background-color: white;">
-    <img src="https://img.icons8.com/ios-filled/50/000000/upload-to-ftp.png" width="100px"/>
+<div class="container" style="border: 1px blue solid; border-radius: 2%;">
+<div style="margin: 5%; align-content: center; border: 1px solid grey; background-color: white;">
+    <img src="https://img.icons8.com/ios-filled/50/000000/upload-to-ftp.png" />
     <h1>Upload Image</h1>
 </div>
-<div class="example-button-row">
+
+
+  <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-nd-offset-2"  style="margin: 1%;">
+          <form (ngSubmit)="onSubmit()" #form="ngForm">
+              <div id="user-data">
+                  <div class="form-group">
+                      <label for="name"> Image Link</label>
+                      <input type="text"
+                      id="name"
+                      class="form-control"
+                      ngModel
+                      name="name">
+                  </div>
+                  </div>
+                 
+              <button class="btn btn-primary" type="submit">Submit</button>
+          </form>
+          <div class="example-button-row">
     
-    <button mat-stroked-button color="primary">Upload Image</button>
-    <button mat-stroked-button color="accent">Save Image</button>
-    
+            <button mat-stroked-button color="primary">Upload Image</button>
+            <button mat-stroked-button color="accent">Save Image</button>
+            
+          </div>
+      </div>
   </div>
-<div style="margin: 10%; align-content: center;border: 1px solid grey; background-color: white;">
-    <h1>Upload Banner</h1>
-    <img src="https://img.icons8.com/ios-filled/50/000000/upload-to-ftp.png" width="100px"/>
 </div>
-<div class="example-button-row">
+
+  <div class="container" style="border: 1px blue solid; border-radius: 2%;">
+<div style="margin: 5%; align-content: center;border: 1px solid grey; background-color: white;">
+    <h1>Upload Banner</h1>
+    <img src="https://img.icons8.com/ios-filled/50/000000/upload-to-ftp.png" />
+</div>
+
+  <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-nd-offset-2"  style="margin: 1%;">
+          <form (ngSubmit)="onSubmit()" #form="ngForm">
+              <div id="user-data">
+                  <div class="form-group">
+                      <label for="name">Banner Link</label>
+                      <input type="text"
+                      id="name"
+                      class="form-control"
+                      ngModel
+                      name="name">
+                  </div>
+                  </div>
+                 
+              <button class="btn btn-primary" type="submit">Submit</button>
+          </form>
+          <div class="example-button-row">
     
-    <button mat-stroked-button color="primary">Upload Banner</button>
-    <button mat-stroked-button color="accent">Save Banner</button>
-    
+            <button mat-stroked-button color="primary">Upload Banner</button>
+            <button mat-stroked-button color="accent">Save Banner</button>
+            
+          </div>
+      </div>
   </div>
+</div>

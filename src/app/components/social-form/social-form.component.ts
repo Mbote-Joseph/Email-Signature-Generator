@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-social-form',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./social-form.component.scss']
 })
 export class SocialFormComponent implements OnInit {
-
+  @ViewChild ('form') generalForm:NgForm;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+ onSubmit(){
+   console.log(this.generalForm);
+ }
 }
