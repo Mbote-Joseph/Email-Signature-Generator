@@ -40,4 +40,7 @@ export class UserService {
       );
      //.subscribe(posts=>{});
   }
+  deleteUser(){
+    return this.http.delete('https://emailsignature-1aa20.firebaseio.com/posts.json');
+  }
 }

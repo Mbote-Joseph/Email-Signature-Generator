@@ -29,6 +29,10 @@ export class TemplatesComponent implements OnInit {
     });
    }
   
-      
+   onClearUsers(){
+    this.userService.deleteUser().subscribe(()=>{
+      this.Users=[];
+    }) 
+  }
     
 }

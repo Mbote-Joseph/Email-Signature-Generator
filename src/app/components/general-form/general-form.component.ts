@@ -33,4 +33,9 @@ export class GeneralFormComponent implements OnInit {
     this.users=posts;
   });
  }
+ onClearUsers(){
+   this.userService.deleteUser().subscribe(()=>{
+     this.users=[];
+   })
+ }
 }
