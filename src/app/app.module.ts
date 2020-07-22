@@ -27,7 +27,8 @@ import { ImageFormComponent } from './components/image-form/image-form.component
 import { SocialFormComponent } from './components/social-form/social-form.component';
 import { AddonFormComponent } from './components/addon-form/addon-form.component';
 import { DesignFormComponent } from './components/design-form/design-form.component';
-
+import { UserService } from './shared/user.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,10 +59,11 @@ import { DesignFormComponent } from './components/design-form/design-form.compon
     MatChipsModule,
     MatSlideToggleModule,
     MatTabsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    HttpClientModule
   
   ],
-  providers: [],
+  providers: [UserService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

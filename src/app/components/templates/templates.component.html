@@ -1,4 +1,5 @@
-<mat-card class="example-card">
+<button class="btn btn-success" (click)="onfetchPosts">Fetch</button>
+<mat-card class="example-card" *ngFor="let user of Users">
     
   <mat-card-header>
     <mat-card-title style="font-size: 21px; font-family: Arial, Helvetica, sans-serif; color: rgb(64, 158, 255); font-weight: 600;">Email Template</mat-card-title>
@@ -23,49 +24,61 @@
                                    <tr>
                                        <td>
                                            <span style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; color: rgb(64, 158, 255); font-weight: 700;">
-                               Matthew Murphy
+                               <!-- Matthew Murphy  -->{{user.name | uppercase}}
                            </span>
                        </td>
                    </tr>
                    <tr>
                        <td>
                            <span style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">
-                               Founder 
+                               <!-- Founder  --> {{user.position}}
                            </span>
-                           <span>
+                           <span> 
                                <span style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;"> | </span>
-                               <span style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">CMS Hosting LLC</span>
+                               <span style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">
+                                <!-- CMS Hosting LLC -->{{user.company}}
+                            </span>
                            </span>
                        </td>
                    </tr>
                    <tr>
                        <td>
                            <table cellspacing="0" cellpadding="0" border="0" role="presentation" style="margin-top: 5px; font-size: 0px;"><tr><td><span style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; color: rgb(64, 158, 255); font-weight: 600;">Website: </span>
-                               <a href="http://johndoe.com" style="text-decoration: none; color: inherit; font-size: 12px; font-family: Arial, Helvetica, sans-serif;">cmshosting.xyz</a>
+                               <a href="http://johndoe.com" style="text-decoration: none; color: inherit; font-size: 12px; font-family: Arial, Helvetica, sans-serif;">
+                                <!-- cmshosting.xyz -->{{user.website}}
+                            </a>
                            </td>
                        </tr>
                        <tr>
                            <td>
                                <span style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; color: rgb(64, 158, 255); font-weight: 600;">Email: </span>
-                               <a href="mailto:mail@jonhdoe.com" style="text-decoration: none; color: inherit; font-size: 12px; font-family: Arial, Helvetica, sans-serif;">mmurphy@cmshosting.xyz</a>
+                               <a href="mailto:mail@jonhdoe.com" style="text-decoration: none; color: inherit; font-size: 12px; font-family: Arial, Helvetica, sans-serif;">
+                                <!-- mmurphy@cmshosting.xyz -->{{user.email}}
+                            </a>
                            </td>
                        </tr>
                        <tr>
                            <td>
                                <span style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; color: rgb(64, 158, 255); font-weight: 600;">Phone: </span>
-                               <span style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">833-CMS</span>
+                               <span style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">
+                                <!-- 833-CMS -->{{user.phone}}
+                            </span>
                            </td>
                        </tr>
                        <tr>
                         <td>
                             <span style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; color: rgb(64, 158, 255); font-weight: 600;">Mobile: </span>
-                            <span style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">209-898-6435</span>
+                            <span style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">
+                                <!-- 209-898-6435 -->{{user.mobile}}
+                            </span>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <span style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; color: rgb(64, 158, 255); font-weight: 600;">address: </span>
-                            <span style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">1334 S Center , CA 95206</span>
+                            <span style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">
+                                <!-- 1334 S Center , CA 95206 -->{{user.address}}
+                            </span>
                         </td>
                     </tr>
                    </table>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/shared/user.service';
+import {User} from '../../user.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-templates',
@@ -6,12 +9,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./templates.component.scss']
 })
 export class TemplatesComponent implements OnInit {
-  name:  string = "Joseph Mbote";
-  email: string= "Mbotejoseph001@gmail.com";
-  mobile: string="0792622515";
-  constructor() { }
-
-  ngOnInit(): void {
+  Users: User[] = [];
+  
+  constructor(private userService: UserService) { 
+   
   }
 
+  ngOnInit(){
+    
+    this.userService.fetchUser().subscribe(posts=>{
+      this.Users=posts;
+    });
+    
+  }
+  
+   onfetchPosts(){
+    this.userService.fetchUser().subscribe(posts=>{
+      this.Users=posts;
+    });
+   }
+  
+      
+    
 }

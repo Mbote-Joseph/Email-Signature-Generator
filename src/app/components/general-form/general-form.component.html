@@ -1,7 +1,7 @@
 <div class="container" style="border: 1px blue solid; border-radius: 2%;">
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-nd-offset-2"  style="margin: 1%;">
-            <form (ngSubmit)="onSubmit()" #form="ngForm">
+            <form (ngSubmit)="onSubmit(form.value)" #form="ngForm">
                 <div id="user-data" >
                     <div class="form-group">
                         <label for="name"> Name</label>
@@ -106,16 +106,15 @@
                 </div>
                 <button class="btn btn-primary" type="submit">Submit</button>
             </form>
-            <p>{{user.name}}</p>
-            <p>{{user.company}}</p>
-            <p>{{user.position}}</p>
-            <p>{{user.department}}</p>
-            <p>{{user.phone}}</p>
-            <p>{{user.mobile}}</p>
-            <p>{{user.website}}</p>
-            <p>{{user.skype}}</p>
-            <p>{{user.email}}</p>
-            <p>{{user.address}}</p>
+            
+           
         </div>
+        
     </div>
-</div>
+    <button class="btn btn-success" (click)="onfetchPosts()">Fetch</button>
+        <div *ngFor='let user of users'>
+            <p>{{user.name}}</p>
+            <p>{{user.email}}</p>
+
+        </div>
+</div> 

@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { UserService } from 'src/app/shared/user.service';
+import { User } from 'src/app/user.model';
 
 @Component({
   selector: 'app-general-form',
@@ -9,38 +11,26 @@ import { NgForm } from '@angular/forms';
 export class GeneralFormComponent implements OnInit {
 @ViewChild ('form') generalForm:NgForm;
 
-  user={
-    name:'',
-    company:'',
-    position:'',
-    department:'',
-    phone:'',
-    mobile:'',
-    website:'',
-    skype:'',
-    email:'',
-    address:''
-  };
+  users: User[] = [];
   submitted=false;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.userService.fetchUser().subscribe(posts=>{
+      this.users=posts;
+    });
+    
   }
- onSubmit(){
-   this.submitted=true;
-   this.user.name=this.generalForm.value.name;
-   this.user.company=this.generalForm.value.company;
-   this.user.position=this.generalForm.value.position;
-   this.user.department=this.generalForm.value.department;
-   this.user.phone=this.generalForm.value.phone;
-   this.user.mobile=this.generalForm.value.mobile;
-   this.user.website=this.generalForm.value.website;
-   this.user.skype=this.generalForm.value.skype;
-   this.user.email=this.generalForm.value.email;
-   this.user.address=this.generalForm.value.address;
-   console.log(this.generalForm);
+ onSubmit(userData: User){
+  this.userService.createUser(userData.name, userData.company, userData.position, userData.department, userData.phone, userData.mobile, userData.website, userData.skype, userData.email, userData.address);
+   //console.log(this.generalForm);
    this.generalForm.reset();
    
+ }
+ onfetchPosts(){
+  this.userService.fetchUser().subscribe(posts=>{
+    this.users=posts;
+  });
  }
 }
